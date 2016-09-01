@@ -28,6 +28,11 @@ ${AWS} ec2 create-tags --resources "${INSTANCE_ID}" --tags "Key=Status,Value=${T
 ${AWS} ec2 revoke-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
 ${AWS} ec2 authorize-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
 
+# Copy private key into container and ensure github.com is in known_hosts
+docker-machine ssh "${NAME}" "ssh-keyscan -t rsa github.com >> /home/ubuntu/.ssh/known_hosts"
+docker-machine scp ../docker-id_rsa ${NAME}:/home/ubuntu/.ssh/id_rsa
+docker-machine scp ../docker-id_rsa.pub ${NAME}:/home/ubuntu/.ssh/id_rsa.pub
+docker-machine ssh "${NAME}" "sudo rm -rf /root/.ssh && sudo cp -r /home/ubuntu/.ssh /root/.ssh"
 # Deploy specific commit/tag to host.
 docker-machine ssh "${NAME}" "sudo git clone git@github.com:CivicActions/flash.git ${PWD} && cd ${PWD} && sudo git checkout \"${COMMIT}\""
 # Change directory permissions to non-privileged user.
