@@ -119,10 +119,10 @@ export AWS_SUBNET_ID=
 
 Run the ./bin/deploy script to initiate the deploy, where the first parameter is the subdomain to deploy to, and the second is a Cloudflare DNS hosted domain name. For example:
 ```bash
-./bin/deploy agile-ca civicactions.com
+./bin/deploy flash civicactions.com
 ```
 
-This will deploy a candidate instance to https://agile-ca.civicactions.com/ and run tests on this instance.
+This will deploy a candidate instance to https://flash.civicactions.com/ and run tests on this instance.
 
 If all tests pass then:
 
