@@ -16,6 +16,8 @@ use Drupal\Core\Config\StorageException;
  *
  * This is a wrapper around theme_get_setting() since it does not inherit
  * base theme config nor handle default/overridden values very well.
+ *
+ * @ingroup utility
  */
 class ThemeSettings extends Config {
 
@@ -147,9 +149,9 @@ class ThemeSettings extends Config {
     // Retrieve configured theme-specific settings, if any.
     try {
       if ($theme_settings = \Drupal::config($theme->getName() . '.settings')->get()) {
-        // Remove the schema version if not the active theme.
+        // Remove schemas if not the active theme.
         if (!$active_theme) {
-          unset($theme_settings['schema']);
+          unset($theme_settings['schemas']);
         }
         $config->merge($theme_settings);
       }
@@ -171,7 +173,7 @@ class ThemeSettings extends Config {
     // Generate the path to the logo image.
     if ($config->get('features.logo')) {
       $logo_url = FALSE;
-      foreach (['png', 'jpg'] as $type) {
+      foreach (['svg', 'png', 'jpg'] as $type) {
         if (file_exists($theme->getPath() . "/logo.$type")) {
           $logo_url = file_create_url($theme->getPath() . "/logo.$type");
           break;
@@ -227,7 +229,19 @@ class ThemeSettings extends Config {
    *   TRUE or FALSE
    */
   public function overridesValue($name, $value) {
-    return !!DiffArray::diffAssocRecursive([$name => $value], [$name => $this->get($name)]);
+    // Retrieve the currently stored value for comparison purposes.
+    $current_value = $this->get($name);
+
+    // Due to the nature of DiffArray::diffAssocRecursive, if the provided
+    // value is an empty array, it cannot be iterated over to determine if
+    // the values are different. Instead, it must be checked explicitly.
+    // @see https://www.drupal.org/node/2771121
+    if ($value === [] && $current_value !== []) {
+      return TRUE;
+    }
+
+    // Otherwise, determine if value is overridden by any array differences.
+    return !!DiffArray::diffAssocRecursive([$name => $value], [$name => $current_value]);
   }
 
   /**

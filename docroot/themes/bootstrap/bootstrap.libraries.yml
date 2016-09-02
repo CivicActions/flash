@@ -14,9 +14,6 @@ drupal.bootstrap:
     - core/drupalSettings
 
 theme:
-  css:
-    theme: 
-      css/styles.css: {}
   js:
     js/theme.js: {}
   dependencies:
