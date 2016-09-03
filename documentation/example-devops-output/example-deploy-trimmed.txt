@@ -22,11 +22,11 @@ SSH: Connecting from host [jenkins]
 SSH: Connecting with configuration [docker-host] ...
 SSH: EXEC: STDOUT/STDERR from command [cd /var/jenkins_home/jobs/flash-deploy/workspace/flash
 source ../.env
-./bin/deploy agile-ca civicactions.com] ...
-[deploy] Attempting to create host 5462998-agile-ca.civicactions.com
+./bin/deploy flash civicactions.com] ...
+[deploy] Attempting to create host 5462998-flash.civicactions.com
 Running pre-create checks...
 Creating machine...
-(5462998-agile-ca.civicactions.com) Launching instance...
+(5462998-flash.civicactions.com) Launching instance...
 Waiting for machine to be running, this may take a few minutes...
 Detecting operating system of created instance...
 Waiting for SSH to be available...
@@ -38,7 +38,7 @@ Copying certs to the remote machine...
 Setting Docker configuration on the remote daemon...
 Checking connection to Docker...
 Docker is up and running!
-To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env 5462998-agile-ca.civicactions.com
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env 5462998-flash.civicactions.com
 [deploy] Candidate Docker machine created. Waiting a few seconds before getting the IP and ID
 [deploy] Machine created at IP=54.218.10.222, INSTANCE_ID=i-368351ed.
 [deploy] Setting tag to 'candidate' for i-368351ed.
@@ -509,16 +509,16 @@ Stopping tests_seleniumfirefox_1...
 fgrep: chrome.log: No such file or directory
 fgrep: firefox.log: No such file or directory
 [deploy] Tests PASS, activating candidate build.
-[deploy] Removing instances tagged as 'old': 471d5c8-agile-ca.civicactions.com
-About to remove 471d5c8-agile-ca.civicactions.com
-Successfully removed 471d5c8-agile-ca.civicactions.com
+[deploy] Removing instances tagged as 'old': 471d5c8-flash.civicactions.com
+About to remove 471d5c8-flash.civicactions.com
+Successfully removed 471d5c8-flash.civicactions.com
 [deploy] Setting tag from 'active' to 'old' for i-a5e4377e.
 [deploy] Setting tag from 'candidate' to 'active' for i-368351ed.
-Deleting agile-ca.civicactions.com
+Deleting flash.civicactions.com
 Finished
-Added A record for agile-ca
-Enabled cloudflare for agile-ca.civicactions.com
-[deploy] Deployed to https://agile-ca.civicactions.com
+Added A record for flash
+Enabled cloudflare for flash.civicactions.com
+[deploy] Deployed to https://flash.civicactions.com
 Cache purged for domain civicactions.com
 [deploy] Purging CloudFlare cache for civicactions.com.
 [deploy] Deploy success.
