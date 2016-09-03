@@ -21,7 +21,9 @@ rm -fv logs/xml/TEST*.xml
 echo -e "\n# Running simple curl check for 200 http_code."
 URL="http://$(hostname --ip-address)/"
 RESULT=$(curl -ks --write-out %{http_code} --output /dev/null ${URL})
-if [ "$RESULT" != "200" ]; then
+if [ "$RESULT" == "403" ]; then
+  echo access denied
+elif [ "$RESULT" != "200" ]; then
   echo problem with site
   exit 1
 fi

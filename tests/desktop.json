@@ -13,15 +13,15 @@
     },
     {
       "where": "local",
-      "path": "foster-parent-login.json"
+      "path": "demo-user-login.json"
     },
     {
       "where": "local",
-      "path": "foster-parent-profile.json"
+      "path": "demo-user-profile.json"
     },
     {
       "where": "local",
-      "path": "foster-parent-map.json"
+      "path": "demo-user-map.json"
     }
   ],
   "shareState": true
