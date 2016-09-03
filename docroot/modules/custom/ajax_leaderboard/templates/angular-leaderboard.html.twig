@@ -1,0 +1,41 @@
+<script>{{js_settings|raw}}</script>
+<base href="{{base}}" />
+<div class="container page" ng-app="app">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" ui-sref="home"><img alt="Home" Title="Home" src="../images/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+          </ul>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <main id="main" class="main transform" ui-view></main>
+
+    <footer class="footer clearfix" ng-controller="metaInfoCtrl">
+        <div class="pull-left">
+          <ul>
+            <li ui-sref-active="active"><a href="#" ui-sref="about">About</a></li>
+          </ul>
+        </div>
+        <div class="pull-right">
+
+        </div><!-- /.navbar-collapse -->
+    </footer>
+</div><!-- /.page -->

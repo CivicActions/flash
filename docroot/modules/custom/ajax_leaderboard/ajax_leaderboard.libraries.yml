@@ -1,0 +1,12 @@
+angular-leaderboard:
+  version: VERSION
+  css:
+    theme:
+      includes/js/client/dist/css/app.min.css: {}
+  js:
+    includes/js/demo.js: {}
+    includes/js/client/dist/js/vendor/libraries.min.js: {}
+    includes/js/client/dist/js/app.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

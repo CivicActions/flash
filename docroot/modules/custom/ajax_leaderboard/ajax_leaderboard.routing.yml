@@ -1,0 +1,7 @@
+ajax_leaderboard:
+  path: 'ajax-leaderboard'
+  defaults:
+    _controller: '\Drupal\ajax_leaderboard\Controller\ajaxLeaderboardPage::leaderboard_page'
+    _title: 'Leaderboard'
+  requirements:
+    _permission: 'access ajax leaderboard'

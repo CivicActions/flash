@@ -1,0 +1,4 @@
+access ajax leaderboard:
+  title: 'Access the AJAX leaderboard'
+  description: 'Access the AJAX leaderboard.'
+  restrict access: TRUE

@@ -1,0 +1,6 @@
+name: 'AJAX Leaderboard'
+type: module
+description: 'A leaderboard built with Angular'
+package: UX
+version: VERSION
+core: 8.x

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * AAJX Leaderboard.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ajax_leaderboard_theme() {
+  return array(
+    'angular_leaderboard' => array(
+      'template' => 'angular-leaderboard',
+      'variables' => array(
+        'js_settings' => array(),
+        'base' => '',
+      ),
+    ),
+  );
+
+}
