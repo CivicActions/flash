@@ -16,7 +16,7 @@
         "type": "id",
         "value": "edit-name"
       },
-      "text": "foster-parent"
+      "text": "demo-user1"
     },
     {
       "type": "setElementText",
@@ -32,6 +32,14 @@
         "type": "id",
         "value": "edit-submit"
       }
+    },
+    {
+      "type": "verifyText",
+      "locator": {
+        "type": "css selector",
+        "value": "h1.page-header"
+      },
+      "text": "demo-user1"
     }
   ],
   "data": {
