@@ -8,6 +8,8 @@
   Drupal.behaviors.govready_connect = {
     attach: function(context, settings) {
 
+    angular.bootstrap($('#leaderboard-app'), ['app']);
+
     // Settings in hacky object
     console.log('Settings in hacky object', LeaderboardSettings);
 

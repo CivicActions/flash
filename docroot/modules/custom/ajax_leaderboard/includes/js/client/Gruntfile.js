@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd:'<%= app %>/',
-					src: ['CNAME', '.htaccess', 'favicon.ico', 'fonts/**', 'vendor/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
+					src: ['CNAME', 'favicon.ico', 'fonts/**', 'vendor/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
 					dest: '<%= dist %>/'
 				} , {
 					expand: true,
@@ -150,6 +150,17 @@ module.exports = function(grunt) {
 			}
 		},
 
+		ngtemplates:  {
+		  "app":        {
+		    cwd:      '<%= dist %>',
+		    src:      'views/**/*.html',
+		    dest:     '<%= dist %>/views/app.templates.js',
+		    options:    {
+		      htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+		    }
+		  }
+		},
+
 		wiredep: {
 			target: {
 				src: [
@@ -172,6 +183,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 	
-	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'ngtemplates', 'uglify', 'usemin']);
 
 };
