@@ -11,3 +11,4 @@ is_admin: false
 permissions:
   5: 'access site-wide contact form'
   6: 'access content'
+  7: 'access user profiles'
