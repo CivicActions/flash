@@ -1,0 +1,6 @@
+name: 'Flash Login'
+type: module
+description: 'Additional user validation'
+package: Security
+version: VERSION
+core: 8.x

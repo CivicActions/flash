@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Flash Login.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function flash_login_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  array_unshift($form['#validate'], 'flash_login_user_login_form_validate');
+}
+
+/**
+ * Callback to check DHS access
+ */
+function flash_login_user_login_form_validate(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Test
+  $valid_login = !$form_state->isValueEmpty('name') && !$form_state->isValueEmpty('pass')
+              && $form_state->getValue('name') === $form_state->getValue('pass');
+
+  // Set error if not met
+  if(!$valid_login) {
+    $form_state->setErrorByName('pass', t('Sorry your login was unable to be confirmed by additional DHS security layer'));
+    return FALSE;
+  }
+}
