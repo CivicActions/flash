@@ -8,7 +8,7 @@
 /**
  * Adds demo users
  */
-function flash_demo_users_update_8000() {
+function flash_demo_users_install() {
   $users = array(
     'employee1' => array(
       'uid' => '',
