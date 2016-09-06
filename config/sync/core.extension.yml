@@ -21,7 +21,6 @@ module:
   flash_blocks: 0
   flash_login: 0
   google_analytics: 0
-  govready: 0
   help: 0
   history: 0
   image: 0
