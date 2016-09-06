@@ -1,0 +1,6 @@
+name: 'Flash Demo Users'
+type: module
+description: 'Creates demo content'
+package: Other
+version: VERSION
+core: 8.x
