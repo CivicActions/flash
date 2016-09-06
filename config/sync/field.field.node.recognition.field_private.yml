@@ -1,0 +1,23 @@
+uuid: 9816bf81-f9b0-4269-86ed-17a9f86e1d7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_private
+    - node.type.recognition
+id: node.recognition.field_private
+field_name: field_private
+entity_type: node
+bundle: recognition
+label: Private
+description: 'Select this if you do not wish this recognition to be viewable by other users.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Private
+  off_label: Public
+field_type: boolean
