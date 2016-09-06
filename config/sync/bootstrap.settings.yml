@@ -8,10 +8,13 @@ logo:
   url: ''
   use_default: false
 schema: '8000'
+schemas:
+  bootstrap: 8000
 features:
   comment_user_picture: true
   comment_user_verification: true
   favicon: true
   node_user_picture: true
-schemas:
-  bootstrap: 8000
+cdn_provider: ''
+table_responsive: '-1'
+table: ''

@@ -1,0 +1,20 @@
+uuid: ab4c5caf-5cac-47d9-a465-697daa0fc97d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dhs
+id: mainpagecontent
+theme: dhs
+region: content
+weight: -7
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

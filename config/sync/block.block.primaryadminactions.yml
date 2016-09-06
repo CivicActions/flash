@@ -1,0 +1,18 @@
+uuid: b067e912-7c88-401b-abfb-3ee693cd66bc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dhs
+id: primaryadminactions
+theme: dhs
+region: header
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

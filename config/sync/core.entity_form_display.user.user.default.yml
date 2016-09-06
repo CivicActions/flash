@@ -19,6 +19,8 @@ content:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+  google_analytics:
+    weight: 3
   language:
     weight: 0
     settings: {  }
