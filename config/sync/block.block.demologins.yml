@@ -1,0 +1,39 @@
+uuid: 47a985b8-6fcf-4829-aa23-f3f5d858a06c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a184e5c7-3662-4f8b-a0f1-8db92b643738'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - dhs
+id: demologins
+theme: dhs
+region: content
+weight: null
+provider: null
+plugin: 'block_content:a184e5c7-3662-4f8b-a0f1-8db92b643738'
+settings:
+  id: 'block_content:a184e5c7-3662-4f8b-a0f1-8db92b643738'
+  label: 'Demo Logins'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
