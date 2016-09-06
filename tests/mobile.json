@@ -21,15 +21,15 @@
     },
     {
       "where": "local",
+      "path": "demo-user-vote.json"
+    },
+    {
+      "where": "local",
       "path": "demo-user-profile.json"
     },
     {
       "where": "local",
       "path": "mobile-open-navbar.json"
-    },
-    {
-      "where": "local",
-      "path": "demo-user-map.json"
     }
   ],
   "shareState": true

@@ -17,11 +17,11 @@
     },
     {
       "where": "local",
-      "path": "demo-user-profile.json"
+      "path": "demo-user-vote.json"
     },
     {
       "where": "local",
-      "path": "demo-user-map.json"
+      "path": "demo-user-profile.json"
     }
   ],
   "shareState": true
