@@ -20,6 +20,7 @@ module:
   filter: 0
   flash_blocks: 0
   flash_login: 0
+  flash_demo_users: 0
   google_analytics: 0
   help: 0
   history: 0
