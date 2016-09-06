@@ -2,6 +2,9 @@ uuid: 5823b428-b736-4eed-9839-f7613a22b117
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
   module:
     - user
 _core:
@@ -14,6 +17,8 @@ content:
   profile_main:
     weight: 10
 hidden:
+  field_first_name: true
+  field_last_name: true
   member_for: true
   profile_biological_parent: true
   profile_foster_parent: true
