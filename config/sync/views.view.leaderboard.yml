@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.storage.node.field_nominee
+    - field.storage.user.field_first_name
+    - field.storage.user.field_last_name
     - node.type.recognition
     - system.menu.main
   module:
@@ -97,15 +99,15 @@ display:
         options:
           view_mode: teaser
       fields:
-        field_nominee_1:
-          id: field_nominee_1
-          table: node__field_nominee
-          field: field_nominee
-          relationship: none
+        field_first_name:
+          id: field_first_name
+          table: user__field_first_name
+          field: field_first_name
+          relationship: field_nominee
           group_type: group
           admin_label: ''
-          label: Nominee
-          exclude: false
+          label: 'First name'
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -145,11 +147,74 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: true
-          group_column: target_id
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_last_name:
+          id: field_last_name
+          table: user__field_last_name
+          field: field_last_name
+          relationship: field_nominee
+          group_type: group
+          admin_label: ''
+          label: Nominee
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_last_name }}, {{ field_first_name }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -318,7 +383,16 @@ display:
           plugin_id: text
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_nominee:
+          id: field_nominee
+          table: node__field_nominee
+          field: field_nominee
+          relationship: none
+          group_type: group
+          admin_label: 'field_nominee: User'
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
       group_by: true
@@ -331,7 +405,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_nominee'
+        - 'config:field.storage.user.field_first_name'
+        - 'config:field.storage.user.field_last_name'
   page_1:
     display_plugin: page
     id: page_1
@@ -363,7 +438,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_nominee'
+        - 'config:field.storage.user.field_first_name'
+        - 'config:field.storage.user.field_last_name'
   page_2:
     display_plugin: page
     id: page_2
@@ -390,7 +466,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_nominee'
+        - 'config:field.storage.user.field_first_name'
+        - 'config:field.storage.user.field_last_name'
   page_3:
     display_plugin: page
     id: page_3
@@ -445,7 +522,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_nominee'
+        - 'config:field.storage.user.field_first_name'
+        - 'config:field.storage.user.field_last_name'
   rest_export_1:
     display_plugin: rest_export
     id: rest_export_1

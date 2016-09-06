@@ -1,22 +1,20 @@
-uuid: 85d730c8-5f30-443f-8296-cbcb0e1a60bd
+uuid: f24804d5-163a-41e5-a8bd-0a4566187862
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
-    - node.type.recognition
+    - user.role.employee
   module:
-    - node
     - user
-id: nominations
-label: 'Nomination Leaderboard'
+id: recognition_user_list
+label: 'Recognition user list'
 module: views
 description: ''
 tag: ''
-base_table: node_field_data
-base_field: nid
+base_table: users_field_data
+base_field: uid
 core: 8.x
 display:
   default:
@@ -28,7 +26,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content'
+          perm: 'access user profiles'
       cache:
         type: tag
         options: {  }
@@ -69,41 +67,28 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: table
+        type: default
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            title: title
-          info:
-            title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: '-1'
-          empty_table: false
+          uses_fields: false
       row:
-        type: 'entity:node'
+        type: fields
         options:
-          view_mode: teaser
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
       fields:
         field_first_name:
           id: field_first_name
           table: user__field_first_name
           field: field_first_name
-          relationship: field_nominee
+          relationship: none
           group_type: group
           admin_label: ''
-          label: 'First name'
+          label: ''
           exclude: true
           alter:
             alter_text: false
@@ -136,7 +121,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -147,7 +132,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -163,10 +148,10 @@ display:
           id: field_last_name
           table: user__field_last_name
           field: field_last_name
-          relationship: field_nominee
+          relationship: none
           group_type: group
           admin_label: ''
-          label: Person
+          label: ''
           exclude: false
           alter:
             alter_text: true
@@ -199,7 +184,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -210,7 +195,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -222,15 +207,15 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        uid:
-          id: uid
-          table: node_field_data
-          field: uid
+        name:
+          id: name
+          table: users_field_data
+          field: name
           relationship: none
-          group_type: count
+          group_type: group
           admin_label: ''
-          label: Nominations
-          exclude: false
+          label: ''
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -262,7 +247,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -270,11 +255,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: user_name
           settings:
-            link: true
-          group_column: entity_id
+            link_to_entity: true
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -284,39 +269,31 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: uid
+          entity_type: user
+          entity_field: name
           plugin_id: field
       filters:
         status:
           value: true
-          table: node_field_data
+          table: users_field_data
           field: status
           plugin_id: boolean
-          entity_type: node
+          entity_type: user
           entity_field: status
           id: status
           expose:
             operator: ''
           group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            recognition: recognition
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-        field_private_value:
-          id: field_private_value
-          table: node__field_private
-          field: field_private_value
+        roles_target_id:
+          id: roles_target_id
+          table: user__roles
+          field: roles_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: false
+          operator: or
+          value:
+            employee: employee
           group: 1
           exposed: false
           expose:
@@ -331,6 +308,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -343,87 +321,45 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: boolean
-      sorts:
-        uid:
-          id: uid
-          table: node_field_data
-          field: uid
-          relationship: none
-          group_type: count
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: node
-          entity_field: uid
-          plugin_id: standard
-      title: 'Nomination Leaderboard'
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<a href="/leaderboard">Recognitions</a> | Nominations'
-            format: basic_html
-          plugin_id: text
+          reduce_duplicates: false
+          entity_type: user
+          plugin_id: user_roles
+      sorts: {  }
+      header: {  }
       footer: {  }
       empty: {  }
-      relationships:
-        field_nominee:
-          id: field_nominee
-          table: node__field_nominee
-          field: field_nominee
-          relationship: none
-          group_type: group
-          admin_label: 'field_nominee: User'
-          required: true
-          plugin_id: standard
+      relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      group_by: true
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.user.field_first_name'
         - 'config:field.storage.user.field_last_name'
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: Page
+  entity_reference_1:
+    display_plugin: entity_reference
+    id: entity_reference_1
+    display_title: 'Entity Reference'
     position: 1
     display_options:
       display_extenders: {  }
-      path: leaderboard/nominations
-      menu:
-        type: tab
-        title: Nominations
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
-        menu_name: main
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            field_first_name: field_first_name
+            field_last_name: field_last_name
+            name: name
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.user.field_first_name'
