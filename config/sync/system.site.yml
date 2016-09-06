@@ -3,7 +3,7 @@ name: 'DHS FLASH'
 mail: admin@example.com
 slogan: ''
 page:
-  403: ''
+  403: /user/login
   404: ''
   front: /leaderboard
 admin_compact_mode: false
