@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.recognition.body
     - field.field.node.recognition.field_nominee
     - field.field.node.recognition.field_private
+    - field.field.node.recognition.field_recognition_type
     - node.type.recognition
   module:
     - path
@@ -37,11 +38,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_private:
-    weight: 26
+    weight: 9
     settings:
       display_label: false
     third_party_settings: {  }
     type: boolean_checkbox
+  field_recognition_type:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   path:
     type: path
     weight: 6

@@ -1,0 +1,23 @@
+uuid: 03c9870e-2920-4af2-ae5c-9eab3f86e774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recognition_type
+    - node.type.recognition
+  module:
+    - options
+id: node.recognition.field_recognition_type
+field_name: field_recognition_type
+entity_type: node
+bundle: recognition
+label: 'Recognition Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: pat
+default_value_callback: ''
+settings: {  }
+field_type: list_string
