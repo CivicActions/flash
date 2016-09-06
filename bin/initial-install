@@ -10,5 +10,5 @@ drush si -y --sites-subdir=default config_installer
 echo 'Creating initial demo users'
 create-demo-users
 
-echo 'Refresh the application data in the GovReady Dashboard'
-drush govready-collect all
+#echo 'Refresh the application data in the GovReady Dashboard'
+#drush govready-collect all
