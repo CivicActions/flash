@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source $(dirname $0)/../lib/bowline/bowline
+assert_running
+
+docker exec -it ${web} oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_rht-ccp --results-arf /var/www/logs/arf.xml --report /var/www/logs/report.html /usr/share/xml/scap/ssg/content/ssg-centos7-ds.xml

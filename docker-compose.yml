@@ -12,7 +12,7 @@ db:
   expose:
     - "3306"
 php:
-  image: davenuman/bowline-centos
+  image: aschmoe/bowline-centos-openscap
   command: php-fpm
   environment:
     - COMPOSER_HOME=/.composer
@@ -24,7 +24,7 @@ php:
     - db:dbhost
   hostname: php_host
 web:
-  image: davenuman/bowline-centos
+  image: aschmoe/bowline-centos-openscap
   command: httpd -D FOREGROUND -e debug
   expose:
     - "80"
