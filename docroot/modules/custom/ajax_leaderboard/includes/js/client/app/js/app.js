@@ -8,11 +8,14 @@
 
 angular.module('app', [
   'app.page',
+  'app.node',
   'ui.router',
+  'drupalService',
   'scrollTo',
   'ui.bootstrap',
   'ngSanitize',
   'ngAnimate',
+  'ngResource',
   'ngTouch'
 ])
 
@@ -24,8 +27,9 @@ angular.module('app', [
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
 
-      // $rootScope.pageUrl = 'http://DHSFlash!';
-    
+      // Drupal API
+      $rootScope.apiUrl = 'http://172.17.0.4';
+
       // Apply meta data if available
       $rootScope.$on('$stateChangeStart', 
         function(event, toState, toParams, fromState, fromParams){
