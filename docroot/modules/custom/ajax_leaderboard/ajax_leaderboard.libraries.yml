@@ -7,6 +7,7 @@ angular-leaderboard:
     includes/js/demo.js: {}
     includes/js/client/dist/js/vendor/libraries.min.js: {}
     includes/js/client/dist/js/app.min.js: {}
+    includes/js/client/dist/views/app.templates.js: {}
   dependencies:
     - core/jquery
     - core/drupalSettings

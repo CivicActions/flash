@@ -1,3 +1,10 @@
+user_register:
+  path: '/api/v1/user/register'
+  defaults:
+    _controller: '\Drupal\ajax_leaderboard\Controller\ajaxLeaderboardPage::register'
+  requirements:
+    _access_user_register: 'TRUE'
+
 ajax_leaderboard:
   path: 'ajax-leaderboard'
   defaults:

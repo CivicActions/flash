@@ -8,11 +8,40 @@
 namespace Drupal\ajax_leaderboard\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\user\Controller;
+use Drupal\Core\Form\FormState;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Provides route responses for the Example module.
  */
 class ajaxLeaderboardPage extends ControllerBase {
+
+  // @TODO figure out user register for app development
+  // For now set permissions to anon
+  public function register() {
+    $values = array(
+      'name' => 'demo-admin',
+      'pass' => 'demo'
+    );
+    $form_state = (new FormState())
+      ->setValues($values);
+    // $form = \Drupal::formBuilder()->submitForm('\Drupal\user\RegisterForm', $form_state);
+    // print_r($form);
+    // exit();
+    // return new JsonResponse($form_state);
+
+    // // Check for errors from the from
+    // if ($errors = $form_state->getErrors()) {
+    //   // Return errors to notify the client.
+    //   return new JsonResponse( array( 'error' => $errors ));
+    // }
+    // else {
+    //   // Return new user session to client.
+    //   $uid = \Drupal::service('user.auth')->authenticate($_POST['name'], $_POST['pass']);
+    //   return new JsonResponse( array( 'uid' => $uid, 'name' => $_POST['name'] ) );
+    // }
+  }
 
   public function leaderboard_page() {
 
