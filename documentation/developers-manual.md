@@ -9,10 +9,18 @@ See the [Devops Manual](https://github.com/CivicActions/flash/blob/master/docume
 * Go to /admin/config/user-interface/shortcut/manage/default/customize, delete all shortcuts
 
 
+### Install locally
+```
+﻿⁠⁠⁠⁠drush si config_installer sync﻿⁠⁠⁠⁠
+```
+
 ### Making updates to Drupal
 We are using the Drupal 8 Configuration Management (CMI) system.  CMI settings can be imported and exported with Drush:
 ```
 drush config-export sync
+# To export specific settings:
+﻿⁠⁠⁠⁠drush config-get XXXXXXXXXX > ../config/sync/XXXXXXXX.yml﻿⁠⁠⁠⁠
+﻿⁠⁠⁠⁠drush config-export #(follow up with 'n')﻿⁠⁠⁠⁠
 ```
 CMI settings can also be managed within the Drupal interface: `/admin/config/development/configuration`.
 
