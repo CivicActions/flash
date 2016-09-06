@@ -275,7 +275,20 @@ display:
             value: '<a href="/leaderboard">Recognitions</a> | Nominations'
             format: basic_html
           plugin_id: text
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<a href="/node/add/recognition" class="btn btn-default btn-lg">Create new recognition</a>'
+            format: full_html
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }
