@@ -34,7 +34,7 @@ function govready_api($endpoint, $method = 'GET', $data = array(), $anonymous = 
   $token = \Drupal::config('govready.settings')->get('govready_token');
 
   if (!$anonymous && (empty($token['id_token']) || empty($token['endoflife']) || $token['endoflife'] < time())) {
-    $token = govready_refresh_token(TRUE);
+    $token = \Drupal\govready\Controller\GovreadyPage::govready_refresh_token(TRUE);
   }
   $token = !$anonymous && !empty($token['id_token']) ? $token['id_token'] : FALSE;
 
