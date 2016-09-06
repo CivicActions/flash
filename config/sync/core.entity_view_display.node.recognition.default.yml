@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.recognition.body
     - field.field.node.recognition.field_nominee
     - field.field.node.recognition.field_private
+    - field.field.node.recognition.field_recognition_type
     - node.type.recognition
   module:
+    - options
     - user
 id: node.recognition.default
 targetEntityType: node
@@ -21,6 +23,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_recognition_type:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   links:
     weight: 0
     settings: {  }

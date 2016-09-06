@@ -1,0 +1,30 @@
+uuid: ec624443-4b46-40da-8d4b-1c83721c5b37
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_recognition_type
+field_name: field_recognition_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pat
+      label: 'Pat on the Back'
+    -
+      value: attitude
+      label: Attitude
+    -
+      value: aptitude
+      label: Aptitude
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
