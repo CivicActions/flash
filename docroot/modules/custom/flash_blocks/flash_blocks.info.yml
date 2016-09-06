@@ -1,0 +1,7 @@
+name: FLASH Custom Blocks
+description: Provides custom blocks for use around the DHS FLASH site.
+package: Custom
+
+type: module
+core: 8.x
+
