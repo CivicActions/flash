@@ -1,0 +1,18 @@
+uuid: d98436a9-0a71-4249-a9f3-a2f365e23c26
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dhs
+id: pagetitle
+theme: dhs
+region: header
+weight: 1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

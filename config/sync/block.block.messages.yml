@@ -1,0 +1,20 @@
+uuid: 021a9ec7-5522-433b-ae4b-bf29e9b87a75
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dhs
+id: messages
+theme: dhs
+region: header
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }
