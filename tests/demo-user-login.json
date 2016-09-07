@@ -24,7 +24,7 @@
         "type": "id",
         "value": "edit-pass"
       },
-      "text": "demo"
+      "text": "demo-user1"
     },
     {
       "type": "clickElement",
@@ -37,7 +37,7 @@
       "type": "verifyText",
       "locator": {
         "type": "css selector",
-        "value": "h1.page-header"
+        "value": "h1"
       },
       "text": "demo-user1"
     }

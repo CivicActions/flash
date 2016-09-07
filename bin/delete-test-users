@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source $(dirname $0)/../lib/bowline/bowline
+assert_running
+assert_composer
+
+export DRUSH="docker exec -it ${web} sudo -iu www-data TERM="xterm" /var/www/vendor/drush/drush/drush --root=/var/www/docroot --uri=${DRUSH_URI}"
+
+echo "Deleting test users"
+
+DRUSH = drush
+
+${DRUSH} user-cancel -y demo-user1 > /dev/null
+${DRUSH} user-cancel -y demo-user2 > /dev/null
+${DRUSH} user-cancel -y demo-admin > /dev/null
