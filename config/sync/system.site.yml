@@ -1,10 +1,11 @@
+Running 'drush config-get system.site' inside container, using uri: http://172.17.0.4/
 uuid: a624e584-0f38-4329-8b20-571ebffddd38
 name: 'DHS FLASH'
 mail: admin@example.com
 slogan: ''
 page:
   403: /user/login
-  404: ''
+  404: /user/login
   front: /leaderboard
 admin_compact_mode: false
 weight_select_max: 100
@@ -12,3 +13,4 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+

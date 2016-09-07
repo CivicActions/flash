@@ -1,6 +1,0 @@
-name: 'FLASH Auth Redirect'
-type: module
-description: 'Redirects non-authenticated users to the login form'
-package: FLASH
-version: '8.x-1.0'
-core: '8.x'
