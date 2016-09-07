@@ -1,4 +1,3 @@
-Running 'drush config-get system.site' inside container, using uri: http://172.17.0.4/
 uuid: a624e584-0f38-4329-8b20-571ebffddd38
 name: 'DHS FLASH'
 mail: admin@example.com
