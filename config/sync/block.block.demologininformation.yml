@@ -11,7 +11,7 @@ dependencies:
 id: demologininformation
 theme: dhs
 region: content
-weight: null
+weight: -3
 provider: null
 plugin: demo_login_block
 settings:

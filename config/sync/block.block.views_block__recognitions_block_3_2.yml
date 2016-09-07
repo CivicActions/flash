@@ -12,7 +12,7 @@ dependencies:
 id: views_block__recognitions_block_3_2
 theme: dhs
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: 'views_block:recognitions-block_3'
 settings:
