@@ -270,6 +270,14 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ', '
+          format_plural: 1
+          format_plural_string: "1 star\x03@count stars"
+          prefix: ''
+          suffix: ''
           click_sort_column: target_id
           type: entity_reference_label
           settings:
@@ -282,7 +290,6 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
           field_api_classes: false
           entity_type: node
           entity_field: uid
@@ -360,20 +367,7 @@ display:
           entity_field: uid
           plugin_id: standard
       title: 'Nomination Leaderboard'
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<a href="/leaderboard">Recognitions</a> | Nominations'
-            format: basic_html
-          plugin_id: text
+      header: {  }
       footer: {  }
       empty: {  }
       relationships:

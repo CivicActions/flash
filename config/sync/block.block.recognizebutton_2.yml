@@ -1,0 +1,26 @@
+uuid: 6c89f627-350e-4975-9803-98528f21dd6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - flash_blocks
+    - system
+  theme:
+    - dhs
+id: recognizebutton_2
+theme: dhs
+region: content
+weight: -2
+provider: null
+plugin: create_recognition_block
+settings:
+  id: create_recognition_block
+  label: 'Recognize Button'
+  provider: flash_blocks
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/leaderboard\r\n/leaderboard/*"
+    negate: false
+    context_mapping: {  }
