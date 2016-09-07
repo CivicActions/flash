@@ -4,3 +4,158 @@
  * @file
  * Flash Demo Users.
  */
+
+function _flash_demo_users_users() {
+  return array(
+    'employee1' => array(
+      'uid' => '',
+      'field_first_name' => 'Bob',
+      'field_last_name' => 'Dob',
+      'kudos' => array('employee4', 'employee7')
+    ),
+
+    'employee2' => array(
+      'uid' => '',
+      'field_first_name' => 'Bill',
+      'field_last_name' => 'Dill',
+      'kudos' => array('employee4', 'employee7')
+    ),
+
+    'employee3' => array(
+      'uid' => '',
+      'field_first_name' => 'Marsha',
+      'field_last_name' => 'Larsha',
+      'kudos' => array('employee4', 'employee7')
+    ),
+
+    'employee4' => array(
+      'uid' => '',
+      'field_first_name' => 'Jeff',
+      'field_last_name' => 'Deff',
+      'kudos' => array('employee7')
+    ),
+
+    'employee5' => array(
+      'uid' => '',
+      'field_first_name' => 'Alex',
+      'field_last_name' => 'Kalex',
+      'kudos' => array('employee7')
+    ),
+
+    'employee6' => array(
+      'uid' => '',
+      'field_first_name' => 'Josh',
+      'field_last_name' => 'Rosh',
+      'kudos' => array('employee7')
+    ),
+
+    'employee7' => array(
+      'uid' => '',
+      'field_first_name' => 'Cathy',
+      'field_last_name' => 'Yathy',
+      'kudos' => array('employee1')
+    ),
+
+    'employee8' => array(
+      'uid' => '',
+      'field_first_name' => 'Kim',
+      'field_last_name' => 'Bim',
+      'kudos' => array('employee5')
+    ),
+
+    'employee9' => array(
+      'uid' => '',
+      'field_first_name' => 'Steve',
+      'field_last_name' => 'Peve',
+      'kudos' => array('employee5')
+    ),
+
+    'admin1' => array(
+      'uid' => '',
+      'role' => 'administrator',
+      'field_first_name' => 'Martha',
+      'field_last_name' => 'Tartha',
+      'kudos' => array()
+    ),
+
+    'admin2' => array(
+      'uid' => '',
+      'role' => 'administrator',
+      'field_first_name' => 'Fred',
+      'field_last_name' => 'Smed',
+      'kudos' => array()
+    ),
+
+    'admin3' => array(
+      'uid' => '',
+      'role' => 'administrator',
+      'field_first_name' => 'Tim',
+      'field_last_name' => 'Rim',
+      'kudos' => array()
+    ),
+  ); 
+}
+
+/**
+ * Adds demo users
+ */
+function flash_demo_users_create() {
+
+  if(user_load_by_name('employee1')) {
+    return FALSE;
+  }
+  
+  $users =_flash_demo_users_users();
+  $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  // Create demo users
+  foreach ($users as $name => $user_info) {
+    $user = \Drupal\user\Entity\User::create();
+    $user->setUsername($name);
+    $user->setPassword($name);
+    $user->enforceIsNew();
+    $role = empty($user_info['role']) ? 'employee' : $user_info['role'];
+    $user->addRole($role);
+    $user->set("preferred_langcode", $lang);
+    $user->set("preferred_admin_langcode", $lang);
+    $user->set('field_first_name', array(
+      'value' => $user_info['field_first_name']
+    ));
+    $user->set('field_last_name', array(
+      'value' => $user_info['field_last_name']
+    ));
+    $user->activate();
+    $result = $user->save();
+
+    if(!empty($result)) {
+      $users[$name]['uid'] =  $user->get('uid')->value;
+    }
+  }
+
+  // Create demo content
+  foreach ($users as $name => $user_info) {
+    if(empty($user_info['kudos'])) {
+      continue;
+    }
+    foreach ($user_info['kudos'] as $value) {
+      $node = \Drupal\node\Entity\Node::create(array(
+        'type' => 'recognition',
+        'title' => 'Thank you ' . $users[$value]['field_first_name'] . '!',
+        'langcode' => 'en',
+        'uid' => $user_info['uid'],
+        'status' => 1,
+      ));
+      $node->set('body', array(
+        'value' => $users[$value]['field_first_name'] . " has been so helpful.",
+        'format' => 'full_html'
+      ));
+      $node->set('field_nominee', array(array(
+        'target_id' => $users[$value]['uid']
+      )));
+
+      $result = $node->save();
+    }
+  }
+
+  return TRUE;
+}
