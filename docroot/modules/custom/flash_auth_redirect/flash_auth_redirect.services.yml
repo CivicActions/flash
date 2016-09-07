@@ -1,6 +1,0 @@
-services:
-
-  flash_auth_redirect_event_subscriber:
-      class: Drupal\flash_auth_redirect\EventSubscriber\FlashAuthRedirect
-      tags:
-        - {name: event_subscriber}
