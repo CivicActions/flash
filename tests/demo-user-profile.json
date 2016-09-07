@@ -4,11 +4,16 @@
   "formatVersion": 2,
   "steps": [
     {
-      "type": "clickElement",
+      "type": "get",
+      "url": "http://web/user"
+    },
+    {
+      "type": "verifyText",
       "locator": {
-        "type": "link text",
-        "value": "Foster parent profile"
-      }
+        "type": "css selector",
+        "value": ".block-views-blockrecognitions-block-3 .field-content"
+      },
+      "text": "1"
     }
   ],
   "data": {

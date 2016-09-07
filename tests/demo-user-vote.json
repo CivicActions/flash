@@ -48,8 +48,8 @@
     {
       "type": "clickElement",
       "locator": {
-        "type": "css selector",
-        "value": "#edit-actions .publish .form-submit"
+        "type": "id",
+        "value": "edit-submit"
       }
     }
   ],
