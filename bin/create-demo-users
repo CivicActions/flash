@@ -6,18 +6,7 @@ assert_composer
 
 export DRUSH="docker exec -it ${web} sudo -iu www-data TERM="xterm" /var/www/vendor/drush/drush/drush --root=/var/www/docroot --uri=${DRUSH_URI}"
 
-echo "Creating/recreating demo users"
+echo "Creating demo users"
 
 DRUSH = drush
-${DRUSH} user-cancel -y demo-user1 > /dev/null
-DEMO_USER=$(${DRUSH} user-create demo-user1 --password=demo-user1 --mail=demo-user@example.org --fields=uid --pipe)
-${DRUSH} user-add-role employee demo-user1
-
-${DRUSH} user-cancel -y demo-user2 > /dev/null
-DEMO_USER=$(${DRUSH} user-create demo-user2 --password=demo-user2 --mail=demo-user2@example.org --fields=uid --pipe)
-${DRUSH} user-add-role employee demo-user2
-
-${DRUSH} user-cancel -y demo-admin > /dev/null
-DEMO_ADMIN=$(${DRUSH} user-create demo-admin --password=demo-admin --mail=demo-admin@example.org --fields=uid --pipe)
-${DRUSH} user-add-role administrator demo-admin
-
+${DRUSH} demo-users > /dev/null
