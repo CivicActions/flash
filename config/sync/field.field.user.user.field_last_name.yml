@@ -6,6 +6,10 @@ dependencies:
     - field.storage.user.field_last_name
   module:
     - user
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: user.user.field_last_name
 field_name: field_last_name
 entity_type: user

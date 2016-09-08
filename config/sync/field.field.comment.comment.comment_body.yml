@@ -7,6 +7,10 @@ dependencies:
     - field.storage.comment.comment_body
   module:
     - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 _core:
   default_config_hash: TmAKjNrJ7RR60YpqvJq_QqEewYe_S8Kd23n8VRCqiWs
 id: comment.comment.comment_body
