@@ -7,6 +7,10 @@ dependencies:
     - node.type.article
   module:
     - comment
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 _core:
   default_config_hash: szSOp-8eNsMcuh8usDre1x76RhDKaPhNUuwzRX5cgv4
 id: node.article.comment

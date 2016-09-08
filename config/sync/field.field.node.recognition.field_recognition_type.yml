@@ -7,6 +7,10 @@ dependencies:
     - node.type.recognition
   module:
     - options
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.recognition.field_recognition_type
 field_name: field_recognition_type
 entity_type: node
