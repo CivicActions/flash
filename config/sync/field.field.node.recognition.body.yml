@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.body
     - node.type.recognition
   module:
+    - custom_add_another
     - text
 third_party_settings:
   custom_add_another:
@@ -15,7 +16,7 @@ id: node.recognition.body
 field_name: body
 entity_type: node
 bundle: recognition
-label: Message
+label: 'Recognition Details'
 description: ''
 required: false
 translatable: true

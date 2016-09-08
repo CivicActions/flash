@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_avatar
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
   module:
@@ -16,6 +17,7 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
+  field_avatar: true
   field_first_name: true
   field_last_name: true
   member_for: true
