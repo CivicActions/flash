@@ -896,7 +896,7 @@ display:
           tokenize: false
           content: '<h4>0</h4>'
           plugin_id: text_custom
-      title: 'Recognition Recieved:'
+      title: 'Recognition Received:'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1177,3 +1177,4 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_nominee'
+
