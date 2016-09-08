@@ -133,6 +133,8 @@ function flash_demo_users_create() {
   }
 
   // Create demo content
+  $type_options = ['pat', 'attitude', 'aptitude'];
+  $date_options = ['1473356582', '1470614400', '1467849600'];
   foreach ($users as $name => $user_info) {
     if(empty($user_info['kudos'])) {
       continue;
@@ -153,7 +155,16 @@ function flash_demo_users_create() {
         'target_id' => $users[$value]['uid']
       )));
 
-      $result = $node->save();
+      $node->set('field_recognition_type', array(
+        'value' => $type_options[rand(0, 2)]
+      ));
+      
+      $node->save();
+
+      $node->set('created', $date_options[rand(0, 2)]);
+
+      $node->save();
+
     }
   }
 

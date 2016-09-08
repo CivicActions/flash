@@ -2,6 +2,22 @@
 
 angular.module('drupalService', ['ngResource'])
 
+  .factory('Path', ['$resource', '$rootScope', function ($resource, $rootScope) {
+    return $resource($rootScope.apiUrl + '/api/:path', 
+      { 'path': '@path' },
+      {
+        get: {
+          method:'GET',
+          cache: true,
+          isArray: true,
+          transformRequest: function(data, headersGetter) {
+            headersGetter()['Accept'] = 'application/hal+json';
+          }
+        }
+      }
+    );
+  }])
+
   .factory('Node', ['$resource', '$rootScope', function ($resource, $rootScope) {
     return $resource($rootScope.apiUrl + '/node/:nid', 
       { 'nid': '@nid' },

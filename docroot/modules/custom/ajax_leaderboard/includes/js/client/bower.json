@@ -12,6 +12,7 @@
     "angular-touch": "~1.4.0",
     "angular-bootstrap": "~1.0",
     "highcharts-ng": "^0.0.12",
-    "highcharts": "^4.2.6"
+    "highcharts": "^4.2.6",
+    "lodash": "^4.15.0"
   }
 }
