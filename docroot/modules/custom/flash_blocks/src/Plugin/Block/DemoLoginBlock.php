@@ -19,8 +19,8 @@ class DemoLoginBlock extends BlockBase {
    */
   public function build() {
     $markup = '<h2>Demo Accounts</h2>';
-    $markup .= '<p>You can login with the following accounts with the password "demo":';
-    $markup .= '<ul><li>demo-user1</li><li>demo-user2</li><li>demo-admin</li></ul>';
+    $markup .= '<p>You can login with the following accounts with a password that matches the username (ex: employee1:employee1):';
+    $markup .= '<ul><li>employee1 (through employee9)</li><li>admin1 (through admin3)</li></ul>';
     $markup .= '</p>';
 
     return array(
