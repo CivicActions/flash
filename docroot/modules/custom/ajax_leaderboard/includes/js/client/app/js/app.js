@@ -16,7 +16,8 @@ angular.module('app', [
   'ngSanitize',
   'ngAnimate',
   'ngResource',
-  'ngTouch'
+  'ngTouch',
+  'highcharts-ng'
 ])
 
 .run(
@@ -108,7 +109,7 @@ angular.module('app', [
         var path = $location.url();
 
         if(!path) {
-          return '/';
+          return '/charts';
         }
       });
 
