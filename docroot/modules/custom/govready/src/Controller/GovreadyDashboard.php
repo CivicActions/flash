@@ -46,7 +46,7 @@ class GovreadyDashboard {
           'url' => $base_url,
           'application' => 'drupal',
         );
-        $response = \Drupal\govready\Controller\GovreadyPage::govready_api('/initialize', 'POST', $data, TRUE);
+        $response = govready_api('/initialize', 'POST', $data, TRUE);
         $options['siteId'] = $response['_id'];
         \Drupal::configFactory()->getEditable('govready.settings')
           ->set('govready_options', $options)
@@ -67,8 +67,6 @@ class GovreadyDashboard {
       $build['#theme'] = 'govready_connect';
       $build['#attached']['library'][] = 'govready/govready-connect';
       $build['#attached']['drupalSettings']['govready_connect'] = $settings;
-
-      dpm($build);
 
       return $build;
 

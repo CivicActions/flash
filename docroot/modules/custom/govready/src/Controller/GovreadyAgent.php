@@ -6,6 +6,8 @@
  */
 
 namespace Drupal\govready\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 class GovreadyAgent {
 
@@ -31,12 +33,12 @@ class GovreadyAgent {
           if (!empty($_POST['endpoint'])) {
              print_r($data);
             $endpoint = '/sites/' . $options['siteId'] . '/' . $_POST['endpoint'];
-            $return = \Drupal\govready\Controller\GovreadyPage::govready_api($endpoint, 'POST', $data);
+            $return = govready_api($endpoint, 'POST', $data);
             // drupal_json_output($data);
             print_r($return);
           }
           // @TODO return meaningful information
-          drupal_json_output(array('response' => 'ok'));
+          return new JsonResponse(array('response' => 'ok'));
         }
       }
 
