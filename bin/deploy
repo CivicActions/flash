@@ -15,7 +15,7 @@ TAG_PREFIX="${SUBDOMAIN}.${DOMAIN}"
 AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID -e AWS_DEFAULT_REGION -e AWS_ZONE -e AWS_SUBNET_ID anigeo/awscli'
 
 # Provision a candidate AWS Docker machine.
-docker-machine create "${NAME}" --driver amazonec2
+docker-machine create "${NAME}" --driver amazonec2 --amazonec2-instance-type t2.medium
 echo "[deploy] Candidate Docker machine created. Waiting a few seconds before getting the IP and ID"
 sleep 10
 IP=$(docker-machine ip "${NAME}" 2>&1)
