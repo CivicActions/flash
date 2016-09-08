@@ -17,11 +17,12 @@ field_name: body
 entity_type: node
 bundle: recognition
 label: 'Recognition Details'
-description: ''
+description: 'Elaborate on the details of this recognition. This will show up on the detail page of the recognition.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
 field_type: text_with_summary
+
