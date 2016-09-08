@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.recognition.body
+    - field.field.node.recognition.comment
     - field.field.node.recognition.field_nominee
     - field.field.node.recognition.field_private
     - field.field.node.recognition.field_recognition_type
     - node.type.recognition
   module:
+    - comment
     - options
     - user
 id: node.recognition.default
@@ -16,6 +18,13 @@ targetEntityType: node
 bundle: recognition
 mode: default
 content:
+  comment:
+    weight: 3
+    label: above
+    settings:
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
   field_nominee:
     weight: 1
     label: above
