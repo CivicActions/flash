@@ -17,30 +17,59 @@ angular.module('app.page', [
             skipScroll: false               // Skips scroll animation (embedded ui-views)
           },
           templateUrl: 'views/charts.html',
-          controller: function($scope, $rootScope, $state){
-            $scope.data = [
-              {
-                month: '2016-09'
-              },
-              {
-                month: '2016-09'
-              },
-              {
-                month: '2016-09'
-              },
-              {
-                month: '2016-09'
-              },
-              {
-                month: '2016-09'
-              },
-              {
-                month: '2016-08'
-              },
-              {
-                month: '2016-09'
+          resolve: {
+            data: function($state, $stateParams, Path) {
+              return Path.get({path: 'recognitions'}).$promise.then(function(data) {
+                return data;
+              });
+            }
+          },
+          controller: function($scope, $rootScope, $state, data){
+            // $scope.data = [
+            //   {
+            //     month: '2016-09'
+            //   },
+            //   {
+            //     month: '2016-09'
+            //   },
+            //   {
+            //     month: '2016-09'
+            //   },
+            //   {
+            //     month: '2016-09'
+            //   },
+            //   {
+            //     month: '2016-09'
+            //   },
+            //   {
+            //     month: '2016-08'
+            //   },
+            //   {
+            //     month: '2016-09'
+            //   }
+            // ];
+
+            console.log(data);
+
+            var seriesInfo = {};
+            _.map(data, function(item) {
+              console.log(item);
+              if(!seriesInfo[item.month]) {
+                seriesInfo[item.month] = {
+                  name: item.month,
+                  data: [1]
+                }
               }
-            ];
+              else {
+                seriesInfo[item.month].data[0]++;
+              }
+            });
+            console.log(seriesInfo);
+
+            seriesInfo = _.sortBy(_.values(seriesInfo), 'name');
+            console.log(seriesInfo);
+            var seriesCat = _.map(seriesInfo, 'name');
+            console.log(seriesCat);
 
             //This is not a highcharts object. It just looks a little like one!
             var chartConfig = {
@@ -49,7 +78,7 @@ angular.module('app.page', [
                   //This is the Main Highcharts chart config. Any Highchart options are valid here.
                   //will be overriden by values specified below.
                   chart: {
-                      type: 'bar'
+                      type: 'column'
                   },
                   tooltip: {
                       style: {
@@ -61,32 +90,7 @@ angular.module('app.page', [
               //The below properties are watched separately for changes.
 
               //Series object (optional) - a list of series using normal Highcharts series options.
-              series: [
-                {
-                  name: 'July',
-                  data: [
-                    10
-                  ]
-                },
-                {
-                  name: 'August',
-                  data: [
-                    15
-                  ]
-                },
-                {
-                  name: 'September',
-                  data: [
-                    17
-                  ]
-                },
-                {
-                  name: 'October',
-                  data: [
-                    0
-                  ]
-                }
-              ],
+              series: seriesInfo,
               //Title configuration (optional)
               title: {
                  text: 'Recognitions per month'
@@ -97,13 +101,14 @@ angular.module('app.page', [
               //Configuration for the xAxis (optional). Currently only one x axis can be dynamically controlled.
               //properties currentMin and currentMax provided 2-way binding to the chart's maximum and minimum
               xAxis: {
-              // currentMin: 0,
-              // currentMax: 20,
-                title: {text: 'Month'}
+                // currentMin: 0,
+                // currentMax: 20,
+                title: {text: 'Month'},
+                categories: seriesCat
               },
               yAxis: {
-              // currentMin: 0,
-              // currentMax: 20,
+                // currentMin: 0,
+                // currentMax: 20,
                 title: {text: 'Total Count'}
               },
               //Whether to use Highstocks instead of Highcharts (optional). Defaults to false.
