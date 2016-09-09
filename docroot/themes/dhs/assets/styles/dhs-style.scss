@@ -9,3 +9,26 @@
 
 // Base-theme overrides.
 @import 'overrides';
+
+
+.padding-row {
+  clear: both;
+  padding: 1em 0;
+}
+
+#views-exposed-form-recognition-user-list-page-1 {
+  text-align: right;
+}
+
+.block-create-recognition-block {
+  
+  a {
+    margin: 1em;
+    text-align: center;
+  }
+
+  span {
+    font-size: 50px;
+    display: block;
+  }
+}
