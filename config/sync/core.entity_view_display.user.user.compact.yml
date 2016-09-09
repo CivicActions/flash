@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_organization
   module:
     - user
 _core:
@@ -20,6 +21,7 @@ hidden:
   field_avatar: true
   field_first_name: true
   field_last_name: true
+  field_organization: true
   member_for: true
   profile_biological_parent: true
   profile_foster_parent: true
