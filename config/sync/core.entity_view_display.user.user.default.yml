@@ -6,9 +6,11 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_organization
     - image.style.thumbnail
   module:
     - image
+    - options
     - user
 _core:
   default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
@@ -25,6 +27,12 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_organization:
+    weight: 11
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   profile_main:
     weight: 10
 hidden:
