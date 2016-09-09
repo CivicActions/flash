@@ -1,0 +1,29 @@
+uuid: 99eda0dc-c068-4fb7-aa25-b78e68769d48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.user_badges.field_points_required
+    - taxonomy.vocabulary.user_badges
+  module:
+    - text
+id: taxonomy_term.user_badges.default
+targetEntityType: taxonomy_term
+bundle: user_badges
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_points_required:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+hidden: {  }
