@@ -101,8 +101,8 @@ class GovreadyAgent {
           'email' => $data['mail'][0]['value'],
           'name' => $data['name'][0]['value'],
           'created' => $data['created'][0]['value'],
-          //'roles' => array_values($account->roles),
-          //'superAdmin' => $account->hasPermission('administer site configuration'),
+          'roles' => $account->hasPermission('administer site configuration') ? array('administrator') : array(), //array_values($account::getRoles()),
+          'superAdmin' => $account->hasPermission('administer site configuration'),
           'lastLogin' => $data['login'][0]['value'],
         ));
       }
