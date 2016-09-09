@@ -7,7 +7,6 @@ dependencies:
     - field.field.user.user.field_badges
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_middle_initial
     - image.style.thumbnail
   module:
     - image
@@ -20,7 +19,7 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 3
+    weight: 0
     settings: {  }
     third_party_settings: {  }
   contact:
@@ -28,7 +27,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_avatar:
-    weight: 6
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -43,32 +42,25 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_first_name:
-    weight: 0
+    weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_last_name:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-  field_middle_initial:
-    weight: 7
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   google_analytics:
-    weight: 5
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   language:
-    weight: 4
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   timezone:
