@@ -1,0 +1,29 @@
+uuid: 76efa460-1359-4761-93e1-250501c3b6e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_points_required
+    - taxonomy.vocabulary.user_badges
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: taxonomy_term.user_badges.field_points_required
+field_name: field_points_required
+entity_type: taxonomy_term
+bundle: user_badges
+label: 'Points Required'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

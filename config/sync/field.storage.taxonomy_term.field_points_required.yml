@@ -1,0 +1,20 @@
+uuid: 9b29c7dc-de30-47e7-adb5-b19aa3a11a04
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_points_required
+field_name: field_points_required
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

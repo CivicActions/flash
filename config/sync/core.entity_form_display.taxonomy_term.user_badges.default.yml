@@ -1,0 +1,51 @@
+uuid: c89f03c1-589d-4064-a0a3-710e6a66c999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.user_badges.field_badge_image
+    - field.field.taxonomy_term.user_badges.field_points_required
+    - image.style.thumbnail
+    - taxonomy.vocabulary.user_badges
+  module:
+    - image
+    - path
+    - text
+id: taxonomy_term.user_badges.default
+targetEntityType: taxonomy_term
+bundle: user_badges
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_badge_image:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_points_required:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

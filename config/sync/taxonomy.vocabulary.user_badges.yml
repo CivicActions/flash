@@ -1,0 +1,9 @@
+uuid: 781e1117-3872-4fe8-bfa4-24834be7d71f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Badge Type'
+vid: user_badges
+description: 'Tracks users who have received recommendations'
+hierarchy: 0
+weight: 0
