@@ -1,0 +1,26 @@
+uuid: 4ff8846c-491c-41b0-9544-3527364a1e72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recognition_type
+    - node.type.badge
+  module:
+    - custom_add_another
+    - options
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.badge.field_recognition_type
+field_name: field_recognition_type
+entity_type: node
+bundle: badge
+label: 'Recognition Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

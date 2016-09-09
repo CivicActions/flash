@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.user_badges.field_badge_image
     - field.field.taxonomy_term.user_badges.field_points_required
+    - image.style.thumbnail
     - taxonomy.vocabulary.user_badges
   module:
+    - image
     - path
     - text
 id: taxonomy_term.user_badges.default
@@ -20,6 +23,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_badge_image:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_points_required:
     weight: 31
     settings:

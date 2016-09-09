@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_avatar
+    - field.field.user.user.field_badges
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
     - field.field.user.user.field_middle_initial
@@ -33,6 +34,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_badges:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_first_name:
     weight: 0
     settings:

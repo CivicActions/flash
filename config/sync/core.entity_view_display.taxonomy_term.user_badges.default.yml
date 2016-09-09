@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.user_badges.field_badge_image
     - field.field.taxonomy_term.user_badges.field_points_required
     - taxonomy.vocabulary.user_badges
   module:
+    - image
     - text
 id: taxonomy_term.user_badges.default
 targetEntityType: taxonomy_term
@@ -18,6 +20,14 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_badge_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_points_required:
     weight: 1
     label: above
