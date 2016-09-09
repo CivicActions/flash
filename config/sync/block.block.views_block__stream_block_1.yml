@@ -1,0 +1,30 @@
+uuid: fbb20291-0302-40ec-aede-523130b0d6df
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.stream
+  module:
+    - system
+    - views
+  theme:
+    - dhs
+id: views_block__stream_block_1
+theme: dhs
+region: sidebar_second
+weight: -8
+provider: null
+plugin: 'views_block:stream-block_1'
+settings:
+  id: 'views_block:stream-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/add/recognition
+    negate: false
+    context_mapping: {  }
