@@ -9,7 +9,7 @@ dependencies:
 id: messages
 theme: dhs
 region: header
-weight: -1
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:

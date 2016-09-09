@@ -9,8 +9,8 @@ dependencies:
     - dhs
 id: recognizebutton_2
 theme: dhs
-region: content
-weight: -2
+region: header
+weight: -3
 provider: null
 plugin: create_recognition_block
 settings:
