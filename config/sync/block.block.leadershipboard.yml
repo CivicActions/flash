@@ -1,0 +1,27 @@
+uuid: db775f9b-4380-4c9f-89b7-ce9740d2ba04
+langcode: en
+status: true
+dependencies:
+  module:
+    - flash_blocks
+    - system
+  theme:
+    - dhs
+id: leadershipboard
+theme: dhs
+region: content
+weight: -9
+provider: null
+plugin: leadership_board
+settings:
+  id: leadership_board
+  label: 'Leadership Board'
+  provider: flash_blocks
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /leaderboard
+    negate: false
+    context_mapping: {  }
+
