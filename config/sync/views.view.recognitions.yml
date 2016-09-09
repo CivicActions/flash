@@ -542,7 +542,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -651,20 +651,7 @@ display:
           plugin_id: bundle
       sorts: {  }
       title: 'Activity Stream'
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: "<a href=\"/node/add/recognition\" class=\"pull-left\"><span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\" style=\"font-size:50px\"></span>\nRecognize a co-worker</a>\n\n<a href=\"/leaderboard\" class=\"pull-right\"><span class=\"glyphicon glyphicon-arrow-up\" aria-hidden=\"true\" style=\"font-size:50px\"></span>\nView the leaderboard</a>\n\n<div class=\"clearfix\"></div><hr/>"
-            format: full_html
-          plugin_id: text
+      header: {  }
       footer: {  }
       empty: {  }
       relationships:
@@ -1667,42 +1654,6 @@ display:
         context: '0'
         menu_name: main
         enabled: false
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.comment'
-        - 'config:field.storage.node.field_recognition_type'
-        - 'config:field.storage.user.field_avatar'
-        - 'config:field.storage.user.field_first_name'
-        - 'config:field.storage.user.field_last_name'
-  page_2:
-    display_plugin: page
-    id: page_2
-    display_title: Stream
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: stream
-      menu:
-        type: none
-        title: 'Employee Recognitions'
-        description: ''
-        expanded: false
-        parent: ''
-        weight: -49
-        context: '0'
-        menu_name: main
-        enabled: false
-      display_description: ''
-      title: 'Activity Stream'
-      defaults:
-        title: false
     cache_metadata:
       max-age: -1
       contexts:
