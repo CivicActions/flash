@@ -12,14 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: pat
-      label: 'Pat on the Back'
+      value: teamwork
+      label: 'Teamwork'
     -
-      value: attitude
-      label: 'High Five'
+      value: improvement
+      label: 'Improvement'
     -
-      value: aptitude
-      label: 'Gold Star'
+      value: delivery
+      label: 'Delivery'
+    -
+      value: experiment
+      label: 'Experiment'
   allowed_values_function: ''
 module: options
 locked: false
