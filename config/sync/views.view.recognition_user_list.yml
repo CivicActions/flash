@@ -8,6 +8,7 @@ dependencies:
     - field.storage.user.field_last_name
     - field.storage.user.field_middle_initial
     - image.style.thumbnail
+    - system.menu.main
     - user.role.employee
   module:
     - image
@@ -30,7 +31,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access user profiles'
+          perm: 'administer site configuration'
       cache:
         type: tag
         options: {  }
@@ -830,6 +831,15 @@ display:
           1: AND
       exposed_block: true
       title: Directory
+      menu:
+        type: normal
+        title: 'Employee List'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: 0
       contexts:
