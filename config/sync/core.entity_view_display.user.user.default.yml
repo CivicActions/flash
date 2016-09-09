@@ -6,6 +6,7 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_middle_initial
     - image.style.thumbnail
   module:
     - image
@@ -30,6 +31,7 @@ content:
 hidden:
   field_first_name: true
   field_last_name: true
+  field_middle_initial: true
   member_for: true
   profile_biological_parent: true
   profile_foster_parent: true
