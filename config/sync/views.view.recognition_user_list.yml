@@ -31,7 +31,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer site configuration'
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -742,6 +742,7 @@ display:
         filters: false
         filter_groups: false
         title: false
+        access: false
       filters:
         roles_target_id:
           id: roles_target_id
@@ -840,6 +841,10 @@ display:
         weight: 0
         context: '0'
         menu_name: main
+      access:
+        type: perm
+        options:
+          perm: 'administer site configuration'
     cache_metadata:
       max-age: 0
       contexts:
