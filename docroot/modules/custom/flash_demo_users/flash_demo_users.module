@@ -156,7 +156,7 @@ function flash_demo_users_create() {
       )));
 
       $node->set('field_recognition_type', array(
-        'value' => $type_options[rand(0, 2)]
+        'value' => $type_options[rand(0, 3)]
       ));
       
       $node->save();
