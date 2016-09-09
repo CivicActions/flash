@@ -1,0 +1,30 @@
+uuid: 833ab071-e878-427c-8ba7-7dd55e2754e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_badge
+  module:
+    - system
+    - views
+  theme:
+    - dhs
+id: views_block__user_badge_block_1
+theme: dhs
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:user_badge-block_1'
+settings:
+  id: 'views_block:user_badge-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

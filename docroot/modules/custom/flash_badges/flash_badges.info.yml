@@ -1,0 +1,6 @@
+name: 'Flash Badges'
+type: module
+description: 'Manages badges custom functionality'
+package: Other
+version: VERSION
+core: 8.x
