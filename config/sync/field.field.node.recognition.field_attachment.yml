@@ -1,0 +1,32 @@
+uuid: 38f605da-2062-49de-89a3-dc94dc61d92c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.recognition
+  module:
+    - custom_add_another
+    - file
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.recognition.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: recognition
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xlsx xls jpg gif jpeg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

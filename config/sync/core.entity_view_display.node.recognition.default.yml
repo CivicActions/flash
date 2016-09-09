@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.recognition.body
+    - field.field.node.recognition.field_attachment
     - field.field.node.recognition.field_nominee
     - field.field.node.recognition.field_private
     - field.field.node.recognition.field_recognition_type
     - node.type.recognition
   module:
+    - file
     - options
     - text
     - user
@@ -23,6 +25,12 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_attachment:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
   field_nominee:
     weight: 1
     label: above
