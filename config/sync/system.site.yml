@@ -1,7 +1,7 @@
 uuid: a624e584-0f38-4329-8b20-571ebffddd38
-name: 'DHS FLASH'
+name: Kudos
 mail: admin@example.com
-slogan: ''
+slogan: 'An internal application for DHS employees so they can give thanks and recognition to co-workers'
 page:
   403: /user/login
   404: /user/login
@@ -12,3 +12,4 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+
