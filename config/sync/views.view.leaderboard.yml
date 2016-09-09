@@ -232,7 +232,7 @@ display:
           relationship: none
           group_type: count
           admin_label: ''
-          label: Recognitions
+          label: Points
           exclude: false
           alter:
             alter_text: false

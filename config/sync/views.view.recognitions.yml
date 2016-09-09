@@ -1285,7 +1285,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'Recognitions Received: {{ field_nominee_1 }}'
+            text: 'Recognition Points Received: {{ field_nominee_1 }}'
             make_link: false
             path: ''
             absolute: false
@@ -1525,7 +1525,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'Recognitions Given: {{ uid_1 }}'
+            text: 'Recognition Points Given: {{ uid_1 }}'
             make_link: false
             path: ''
             absolute: false
