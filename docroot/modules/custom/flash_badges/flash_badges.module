@@ -256,7 +256,6 @@ function flash_badges_node_insert($node) {
           $badge_type_id = $badge_type->id();
           if(!_flash_badges_user_has_badge($badge_nodes, $badge_type_id)) {
             // Create node
-            dpm('creating!!!!!!!!!!!!');
             $new_badge_node = _flash_badges_create_badge_content($nominee_uid, $recognition_type, $badge_type_id);
           }
         }
