@@ -133,7 +133,7 @@ function flash_demo_users_create() {
   }
 
   // Create demo content
-  $type_options = ['pat', 'attitude', 'aptitude'];
+  $type_options = ['teamwork', 'delivery', 'improvement', 'experiment'];
   $date_options = ['1473356582', '1470614400', '1467849600'];
   foreach ($users as $name => $user_info) {
     if(empty($user_info['kudos'])) {
