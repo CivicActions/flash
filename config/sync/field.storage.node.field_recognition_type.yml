@@ -16,10 +16,10 @@ settings:
       label: 'Pat on the Back'
     -
       value: attitude
-      label: Attitude
+      label: 'High Five'
     -
       value: aptitude
-      label: Aptitude
+      label: 'Gold Star'
   allowed_values_function: ''
 module: options
 locked: false

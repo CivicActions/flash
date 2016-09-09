@@ -6,6 +6,7 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - image.style.thumbnail
   module:
     - image
     - user
@@ -18,29 +19,17 @@ mode: default
 content:
   field_avatar:
     weight: 0
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: thumbnail
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_first_name:
-    type: string
-    weight: 1
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_last_name:
-    type: string
-    weight: 2
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   profile_main:
     weight: 10
 hidden:
+  field_first_name: true
+  field_last_name: true
   member_for: true
   profile_biological_parent: true
   profile_foster_parent: true

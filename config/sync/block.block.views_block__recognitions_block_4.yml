@@ -1,0 +1,30 @@
+uuid: b0a5a2fd-6d03-492f-888e-add6851929f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recognitions
+  module:
+    - system
+    - views
+  theme:
+    - dhs
+id: views_block__recognitions_block_4
+theme: dhs
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:recognitions-block_4'
+settings:
+  id: 'views_block:recognitions-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

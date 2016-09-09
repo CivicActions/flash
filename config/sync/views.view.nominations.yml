@@ -274,7 +274,7 @@ display:
           precision: 0
           decimal: .
           separator: ', '
-          format_plural: 1
+          format_plural: 0
           format_plural_string: "1 star\x03@count stars"
           prefix: ''
           suffix: ''

@@ -1,0 +1,23 @@
+uuid: 55a905c9-d56b-4c18-8c84-e65e42f4fa56
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recognition_user_list
+  module:
+    - views
+  theme:
+    - dhs
+id: exposedformrecognition_user_listpage_1
+theme: dhs
+region: header
+weight: -7
+provider: null
+plugin: 'views_exposed_filter_block:recognition_user_list-page_1'
+settings:
+  id: 'views_exposed_filter_block:recognition_user_list-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility: {  }
