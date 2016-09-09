@@ -41,4 +41,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  comment: true
   field_private: true
