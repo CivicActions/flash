@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.recognition.body
+    - field.field.node.recognition.field_attachment
     - field.field.node.recognition.field_nominee
     - field.field.node.recognition.field_private
     - field.field.node.recognition.field_recognition_type
     - node.type.recognition
   module:
+    - file
     - path
     - text
 id: node.recognition.default
@@ -29,6 +31,12 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+  field_attachment:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
   field_nominee:
     weight: 0
     settings:
