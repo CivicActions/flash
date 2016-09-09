@@ -22,7 +22,7 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/user/*'
+    pages: "/user/*\r\n/"
     negate: false
     context_mapping: {  }
   user_role:
@@ -32,3 +32,4 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+
