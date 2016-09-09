@@ -415,7 +415,7 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: employees
+      path: admin/employees
       fields:
         field_avatar:
           id: field_avatar
