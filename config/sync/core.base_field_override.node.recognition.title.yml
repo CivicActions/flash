@@ -1,0 +1,18 @@
+uuid: e20015e7-6ef8-4f63-853f-9ccf5fe247d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.recognition
+id: node.recognition.title
+field_name: title
+entity_type: node
+bundle: recognition
+label: 'Brief Summary'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

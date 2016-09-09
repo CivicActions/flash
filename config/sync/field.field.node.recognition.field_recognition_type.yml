@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_recognition_type
     - node.type.recognition
   module:
+    - custom_add_another
     - options
 third_party_settings:
   custom_add_another:

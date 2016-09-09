@@ -18,10 +18,10 @@ class CreateRecognitionBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $markup = '<a href="/node/add/recognition" class="pull-left"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:50px"></span>
+    $markup = '<a href="/node/add/recognition" class="pull-left btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:50px"></span>
 Recognize a co-worker</a>
 
-<a href="/leaderboard" class="pull-left"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size:50px"></span>
+<a href="/leaderboard" class="pull-left btn btn-default btn-lg"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size:50px"></span>
 View the leaderboard</a>
 
 <div class="clearfix"></div>';

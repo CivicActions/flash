@@ -21,6 +21,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/leaderboard\r\n/leaderboard/*"
+    pages: /stream
     negate: false
     context_mapping: {  }
